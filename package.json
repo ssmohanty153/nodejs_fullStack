@@ -1,0 +1,22 @@
+{
+  "name": "nodejs_fullstack",
+  "version": "1.0.0",
+  "description": "myFirstNode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssmohanty153/nodejs_fullStack.git"
+  },
+  "author": "subhransu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssmohanty153/nodejs_fullStack/issues"
+  },
+  "homepage": "https://github.com/ssmohanty153/nodejs_fullStack#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
