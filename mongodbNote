@@ -1,0 +1,100 @@
+local
+# window
+> Download https://www.mongodb.com/try/download/community
+> in c drive make folder by name of data (c:/data)
+> inside data make folder by name of db (c:/data/db)
+
+Default Port > 27017
+
+Start Server
+> open cmd
+> navigate to bin folder  (c:/programFile/mongodb/server/5.2/bin)
+> mongod
+
+Start Client
+> open cmd
+> navigate to bin folder  (c:/programFile/mongodb/server/5.2/bin)
+> mongo
+
+
+#mac
+> Download https://www.mongodb.com/try/download/community
+> open terminal on root>  mkdir data/db
+
+
+Start Server
+> open terminal
+> mongod --dbpath data/db
+
+Start Client
+> open terminal
+> mongo
+
+////////////////////
+RollNo | English | Hindi
+  1    |  80     |
+  2    |         |  85
+  3    | 70      | 
+
+  [
+      {
+          rollNo:1,
+          english:80
+      },
+      {
+          rollNo:2,
+          hindi:85
+      }
+      {
+          rollNo:3,
+          english:70
+      }
+  ]
+
+
+  Sql       NoSql
+  Database  Database
+  Tables    Collections
+  row       Documents
+  Select    Find
+  Insert    Insert
+  Update    Update
+  delete    Remove
+
+
+  /////See all Database
+  show dbs
+
+  ////to use db
+  use dbname
+
+  ///See all Collections
+  show Collections
+
+  ////find all records
+db.CollectionsName.find()
+db.CollectionsName.find().pretty()
+
+/////Create new dbs
+use dbname
+
+////Insert
+db.CollectionsName.insert({})
+
+db.users.insert({name:"Amit"})
+db.users.insert({name:"Nikita"})
+db.users.insert({_id:1,name:"Arun"})
+db.users.insert({_id:2,name:"Karan"})
+
+ObjectId
+> 12 bytes
+    > 4 byte > timestamp
+    > 5 byte > Random Number
+    > 3 byte > incrementing counter
+
+// find with condition
+db.products.find({Brand:'Gucci',"Color":"white"})
+
+
+//to delete collection name
+db.categort.drop()
