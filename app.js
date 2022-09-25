@@ -1,43 +1,38 @@
-const express = require("express");
-const app = express();
-//dotenv basically we are using for to configure production port inside the development
-const dotenv = require("dotenv");
-const morgan = require("morgan");
+let express = require("express");
+let app = express();
 const fs = require("fs");
-
-//we craeted .ent folder and add that PORT=6700 . Atfer that we config the dotent.config(); then we will able ti use that port
+let dotenv = require("dotenv");
 dotenv.config();
-//by process.env.PORT we can able to get that port
-let port = process.env.PORT || 8080;
+let port = process.env.PORT || 9700;
+let morgan = require("morgan");
+let routes = [
+  { path: "/", key: "Home" },
+  { path: "/category", key: "Category" },
+  { path: "/products", key: "Products" },
+];
 
-//morgan i used to store the log ,
-//we used stream to store the log in side the app.logs file
+let categoryRouter = require("./src/controller/categoryRoute")(routes);
+let productRouter = require("./src/controller/productsRoute")(routes);
+//
 app.use(morgan("short", { stream: fs.createWriteStream("./app.logs") }));
-
-//to call all the static file
-
+// static file path
 app.use(express.static(__dirname + "/public"));
-
 //html file path
-app.set('views', './src/views');
+app.set("views", "./src/views");
+// view engine
+app.set("view engine", "ejs");
 
-//view engine
-app.set('view engine', 'ejs');
-
-//products routing
-let categoryRoutes = require("./src/controller/categoryRoute");
-let productsRouter = require("./src/controller/productsRoute");
-
+//default Route
 app.get("/", function (req, res) {
-  res.render("index");
+  res.render("index", { title: "Home Page", routes: routes });
 });
 
-app.use("/category", categoryRoutes);
-app.use("/products", productsRouter);
+app.use("/category", categoryRouter);
+app.use("/products", productRouter);
+
 app.listen(port, function (err) {
-  if (err) {
-    throw err;
-  } else {
-    console.log("app listen on port no " + port);
+  if (err) throw err;
+  else {
+    console.log(`Server is running on port ${port}`);
   }
 });
