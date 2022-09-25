@@ -1,6 +1,8 @@
 const express = require("express");
 
 let productsRouter = express.Router();
+let mongodb = require('mongodb').MongoClient;
+let url = process.env.mongoUrl;
 
 var products = [
   {

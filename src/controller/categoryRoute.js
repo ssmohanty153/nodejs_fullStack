@@ -1,5 +1,8 @@
 const express = require("express");
 let categoryRoutes = express.Router();
+let mongodb = require('mongodb').MongoClient;
+let url = process.env.mongoUrl;
+
 var category = [
   {
     id: 1,
