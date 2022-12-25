@@ -1,0 +1,62 @@
+<script type="text/javascript" src="normal-script.js"></script>
+<script type="text/javascript" src="async-script.js" async></script>
+<script type="text/javascript" src="defer-script.js" defer></script>
+
+Async allows your script to run as soon as it's loaded, without blocking other elements on the page.
+Defer means your script will only execute after the page has finished loading
+
+Emmit
+
+iv>ul>li
+
+<div>
+    <ul>
+        <li></li>
+    </ul>
+</div>
+
+div+p+bq
+
+<div></div>
+<p></p>
+<blockquote></blockquote>
+
+div+div>p>span+em
+
+<div></div>
+<div>
+    <p>
+      <span></span>
+      <em></em>
+    </p>
+</div>
+
+ul>li\*3
+
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+div#header+div.page+div#footer.class1.class2
+
+<div id="header"></div>
+<div class="page"></div>
+<div id="footer" class="class1 class2"></div>
+
+ul>li.item$\*3
+
+<ul>
+    <li class="item1"></li>
+    <li class="item2"></li>
+    <li class="item3"></li>
+</ul>
+
+ul>li.item$@-\*3
+
+<ul>
+	<li class="item3"></li>
+    <li class="item2"></li>
+    <li class="item1"></li>
+</ul>
